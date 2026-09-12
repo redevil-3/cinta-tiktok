@@ -1,56 +1,63 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: transparent;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
 }
 
-.cinta 
-    width: 100vw;
-    height: 80px;
-    overflow: hidden;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.55);
+.ticker {
+  width: 100vw;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
 }
 
-.texto {
-    display: inline-block;
-    padding-left: 100%;
-    font-family: Arial, sans-serif;
-    font-size: 42px;
-    font-weight: bold;
-    color: #fffff;
-    text-shadow: 2px 2px 2px #00000
-        -2px -2px 2px #00000
-    animation: pasar 24s linear infinite;
+.ticker-text {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+
+  font-family: Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+
+  text-shadow:
+    2px 2px 3px black,
+    -2px -2px 3px black,
+    0 0 8px black;
+
+  animation: tickerMove 20s linear infinite;
 }
 
-@keyframes pasar {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+@keyframes tickerMove {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -1800px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="cinta">
-    <div class="texto">
-        🎵 LIVE DE MUSIQUE RETRO • TOP MUSIQUE INTERNATIONAL • BIENVENUE À TOUS LES AMIS • MERCI POUR VOS LIKES ET PARTAGES ❤️
-    </div>
+<div class="ticker">
+  <div class="ticker-text">
+    🎵 LIVE DE MUSIQUE RETRO • TOP MUSIQUE INTERNATIONAL • BIENVENUE À TOUS LES AMIS • MERCI POUR VOS LIKES ET PARTAGES ❤️
+  </div>
 </div>
 
 </body>
